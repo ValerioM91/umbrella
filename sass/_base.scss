@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 34em) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 25em) {
+    font-size: 45%;
+  }
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  color: var(--color-primary);
+
+  @media only screen and (max-width: 50em) {
+    background-image: none;
+    background-color: var(--background-light);
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 114rem;
+  width: 85%;
+  background-color: var(--background-light);
+  margin: 6rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.35);
+
+  @media only screen and (max-width: 50em) {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    height: 100vh;
+  }
+}
+
+.app {
+  display: flex;
+  background-color: white;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+  position: relative;
+
+  @media only screen and (max-width: 50em) {
+    flex-direction: column;
+    min-height: 80vh;
+    background-color: #fff;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 5;
+
+  display: none;
+}
