@@ -8,13 +8,13 @@ export const weatherForecastById = async function (cityID) {
   // 3 hours
   const requestJSON = await (
     await fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?id=${cityID}${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?id=${cityID}${API_KEY}`
     )
   ).json();
   // Current
   const requestJSONCurrentWeather = await (
     await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?id=${cityID}${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?id=${cityID}${API_KEY}`
     )
   ).json();
 
