@@ -108,23 +108,23 @@ export const matchListArray = async function (searchText) {
   }
 };
 
-// MATCH LIST ON CLICK - SHOWS ONLY EXACT MACTHES
-export const matchListArrayExact = async function (searchText) {
-  try {
-    const cities = await (await fetch('data/city-list-min.json')).json();
+// MATCH LIST - SHOWS ONLY EXACT MACTHES
+// export const matchListArrayExactMatches = async function (searchText) {
+//   try {
+//     const cities = await (await fetch('data/city-list-min.json')).json();
 
-    let matches = cities.filter(city => {
-      const regex = new RegExp(`^${searchText}$`, 'gi');
-      return city.name.match(regex);
-    });
-    const orderedMatches = matches.sort((a, b) => {
-      if (a.name.length < b.name.length) return -1;
-      if (a.name.length > b.name.length) return 1;
-    });
-    const matchListArrayExact = orderedMatches.slice(0, MATCH_LIST_ELEMENTS);
-    return matchListArrayExact;
-  } catch (err) {
-    console.error(`${err} 💥💥💥💥`);
-    throw err;
-  }
-};
+//     let matches = cities.filter(city => {
+//       const regex = new RegExp(`^${searchText}$`, 'gi');
+//       return city.name.match(regex);
+//     });
+//     const orderedMatches = matches.sort((a, b) => {
+//       if (a.name.length < b.name.length) return -1;
+//       if (a.name.length > b.name.length) return 1;
+//     });
+//     const matchListArrayExact = orderedMatches.slice(0, MATCH_LIST_ELEMENTS);
+//     return matchListArrayExact;
+//   } catch (err) {
+//     console.error(`${err} 💥💥💥💥`);
+//     throw err;
+//   }
+// };

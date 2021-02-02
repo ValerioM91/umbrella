@@ -15,9 +15,7 @@ const overlay = document.querySelector('.overlay');
 const searchBtn = document.querySelector('.search-bar__btn');
 
 // SEARCHLIST - List of cities - AUTOCOMPLETE when input is more than 3 letters
-/* REMOVED FOR PERFOMANCE REASONS => BUGS
-TODO looking for a way to add a timeout
-const controlMatchList = async function (searchText) {
+const controlMatchListOnType = async function (searchText) {
   if (searchText.length < 3) {
     SearchList.clear();
     Spinner.clear();
@@ -36,9 +34,8 @@ const controlMatchList = async function (searchText) {
   Spinner.clear();
 };
 searchInput.addEventListener('input', () =>
-  controlMatchList(searchInput.value)
+  controlMatchListOnType(searchInput.value.trim())
 );
-*/
 
 // SEARCH LIST - EXACT MATCHES ON ICON CLICK
 const controlMatchList = async function (searchText) {
@@ -57,13 +54,15 @@ const controlMatchList = async function (searchText) {
 // Seatch for cities when icon is clicked
 searchBtn.addEventListener('click', () => {
   if (searchInput.value === '') return;
-  controlMatchList(searchInput.value);
+  controlMatchList(searchInput.value.trim());
+  searchInput.blur();
 });
 // Seatch for cities when enter key is pressed
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
     if (searchInput.value === '') return;
-    controlMatchList(searchInput.value);
+    controlMatchList(searchInput.value.trim());
+    searchInput.blur();
   }
 });
 
