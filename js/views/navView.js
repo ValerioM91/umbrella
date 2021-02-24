@@ -20,7 +20,7 @@ class NavView {
         el.dateMonth
       }</div>
       </div>
-      <img class="nav__day--icon" src="http://openweathermap.org/img/wn/${
+      <img class="nav__day--icon" src="https://openweathermap.org/img/wn/${
         el.icon
       }@2x.png">
       <div class="nav__day--temp">
