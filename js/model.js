@@ -26,9 +26,8 @@ export const weatherForecastById = async function (cityID) {
 
 const state = {};
 
-// CREATE A DAILY ARRAY[[DAY1],[DAY2],[DAY3],..]
-const se;
-State = function (requestJSON, requestJSONCurrentWeather) {
+// CREATE A DAILY ARRAY[[DAY1],[DAY2],[DAY3],...]
+const setState = function (requestJSON, requestJSONCurrentWeather) {
   state.name = requestJSON.city.name;
   state.country = requestJSON.city.country;
   state.today = new Date(requestJSON.list[0].dt_txt.slice(0, 10));
