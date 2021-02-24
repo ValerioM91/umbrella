@@ -28,7 +28,7 @@ class ResultView {
 
       markup += `<li class="result">
           <div class="result__hour">${hour}</div>
-          <img class="result__icon" src="http://openweathermap.org/img/wn/${icon}@2x.png">
+          <img class="result__icon" src="https://openweathermap.org/img/wn/${icon}@2x.png">
           <div class="result__infos">${info}</div>
           <div class="result__temp"><span class="temp-unit">${changeUnit(
             temperature,

@@ -246,7 +246,8 @@ body {
         .nav__day--active::after {
           display: none; }
         .nav__day--date {
-          font-size: 2rem; }
+          font-size: 2rem;
+          text-align: center; }
           .nav__day--date .day-month {
             font-size: 1.7rem; } }
 
