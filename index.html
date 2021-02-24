@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon//favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="img//favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer="" src="js/controller.js"></script>
+    <title>Umbrella - Weather Forecast</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="img/logo-umbrella.png" alt="logo" class="logo" />
+
+        <form class="search-bar">
+          <input
+            type="text"
+            id="search"
+            class="search-bar__input"
+            required=""
+            placeholder="Weather in..."
+          />
+          <button class="search-bar__btn">
+            <svg class="search-bar__btn--icon">
+              <use href="img/icons.svg#icon-magnifying-glass"></use>
+            </svg>
+          </button>
+          <div class="search-bar__match-list">
+            <ul class="match-list">
+              <!-- 
+                <div class="spinner-in-list"></div>
+              <li class="match-list__result" data-id="">
+                <div class="match-list__result--city">London</div>
+                <div class="match-list__result-country">GB</div>
+              </li>
+              -->
+            </ul>
+          </div>
+        </form>
+
+        <div class="units">
+          <svg class="units__icons units__icons--celsius units__icons--active">
+            <use href="img/icons.svg#icon-Celsius"></use>
+          </svg>
+          <svg class="units__icons units__icons--fahrenheit">
+            <use href="img/icons.svg#icon-Fahrenheit"></use>
+          </svg>
+        </div>
+      </header>
+
+      <div class="app">
+        <nav class="nav">
+          <!-- 
+          <div class="nav__day nav__day--1 nav__day--active">
+            <div class="nav__day--date">
+              <div class="nav__day--date week-day">Today</div>
+              <div class="nav__day--date day-month">1 Gen</div>
+            </div>
+            <img
+              class="nav__day--icon"
+              src="http://openweathermap.org/img/wn/10d2x.png"
+            />
+            <div class="temp-max"><span class="temp-unit">23</span>˚</div>
+            <div class="temp-min"><span class="temp-unit">15</span>˚</div>
+          </div>
+          -->
+        </nav>
+
+        <div class="results">
+          <h2 class="results__heading"></h2>
+
+          <ul class="results__list">
+            <!-- 
+            <li class="result">
+              <div class="result__hour">6:00</div>
+              <img
+                class="result__icon"
+                src="http://openweathermap.org/img/wn/${icon}@2x.png"
+              />
+              <div class="result__infos">Clouds</div>
+              <div class="result__temp"><span class="temp-unit">23</span>˚</div>
+              <div class="result__feels-like">
+                <span class="result__feels-like--text">Feels like</span>
+                <div class="result__feels--like-unit">
+                  <span class="temp-unit">21</span>˚
+                </div>
+              </div>
+            </li>
+            -->
+          </ul>
+        </div>
+
+        <div class="spinner">
+          <!-- <svg class="spinner__icon">
+            <use href="img/icons.svg#icon-spinner"></use>
+          </svg> -->
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </body>
+</html>

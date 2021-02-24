@@ -1,0 +1,115 @@
+.nav {
+  flex: 0 0 30%;
+  z-index: 4;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  line-height: 2.5rem;
+  border-radius: inherit;
+
+  &__day {
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-right: 5px solid var(--background-light);
+
+    @media only screen and (max-width: 62.5em) {
+      padding: 1.5rem;
+    }
+
+    &:not(:first-child) {
+      border-top: 2px solid var(--background-light);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 2px solid var(--background-light);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: inherit;
+    }
+
+    &--date {
+      flex: 0 0 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.7rem;
+      & .day-month {
+        font-size: 1.4rem;
+      }
+    }
+
+    &--icon {
+      height: 6rem;
+      width: 6em;
+    }
+
+    &--temp {
+      flex: 0 0 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.7rem;
+    }
+
+    &--active {
+      background-color: var(--color-primary);
+      color: white;
+      position: relative;
+      clip-path: polygon(0 0, 99.3% 0, 110% 50%, 99.3% 100%, 0 100%);
+      border-right: 0;
+      border-top: 0 !important;
+      border-bottom: 2px solid var(--color-primary) !important;
+      border-bottom-left-radius: 0 !important;
+      margin: -1px;
+
+      &::after {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -6rem;
+        background-color: var(--color-primary);
+        width: 6.2rem;
+        height: 11em;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 50em) {
+    flex: 0 0 12rem;
+    grid-template-columns: repeat(5, 25rem);
+    grid-template-rows: 12rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    border-radius: 0;
+    font-weight: 500;
+
+    &__day {
+      border-bottom: 4px solid var(--background-light) !important;
+      border-top: 0 !important;
+      border-right: 4px solid var(--background-light);
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      &--active::after {
+        display: none;
+      }
+
+      &--date {
+        font-size: 2rem;
+        & .day-month {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}

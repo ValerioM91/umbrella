@@ -1,0 +1,51 @@
+.match-list {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 30rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  list-style: none;
+  display: block;
+
+  &__result,
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    padding: 0.7rem 1.5rem;
+    border-bottom: 1px solid var(--background-dark);
+    cursor: pointer;
+
+    &--city {
+      display: flex;
+      align-items: center;
+    }
+
+    &--country {
+      color: var(--color-secondary);
+    }
+  }
+
+  &__location-icon {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin-right: 1rem;
+    fill: var(--color-secondary);
+  }
+
+  @media only screen and (max-width: 50em) {
+    &__result {
+      padding: 1.2rem;
+      font-size: 2.3rem;
+    }
+
+    &__location-icon {
+      height: 2.3rem;
+      width: 2.3rem;
+    }
+  }
+}
