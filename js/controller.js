@@ -14,7 +14,7 @@ const matchListEL = document.querySelector('.match-list');
 const overlay = document.querySelector('.overlay');
 
 // SEARCHLIST - List of cities - AUTOCOMPLETE when input is more than 3 letters
-const controlMatchListOnType = async function (searchText) {
+const controlMatchListOnType = function (searchText) {
   if (searchText.length < 3) {
     SearchList.clear();
     Spinner.clear();
@@ -22,7 +22,7 @@ const controlMatchListOnType = async function (searchText) {
   }
   Spinner.clear();
   Spinner.renderSpinner();
-  const matchList = await model.matchListArray(searchText);
+  const matchList = model.matchListArray(searchText);
   if (matchList.length === 0) {
     SearchList.clear();
     Spinner.clear();
@@ -36,11 +36,11 @@ searchInput.addEventListener('input', () =>
   controlMatchListOnType(searchInput.value.trim())
 );
 
-const controlMatchList = async function (searchText) {
+const controlMatchList = function (searchText) {
   SearchList.clear();
   Spinner.clear();
   Spinner.renderSpinner();
-  const matchList = await model.matchListArray(searchText);
+  const matchList = model.matchListArray(searchText);
   if (matchList.length === 0) {
     SearchList.renderNoExactMatch(searchText);
     Spinner.clear();
@@ -79,8 +79,10 @@ const controlGetForecast = async function (id) {
   ResultView.renderResultList(forecast.dailyThreeHoursArray[0]);
   // 7. ADD EVENT LISTNER TO NAV
   nav.addEventListener('click', function (e) {
-    nav.childNodes.forEach(day => day.classList?.remove('nav__day--active'));
+    nav.childNodes?.forEach(day => day.classList.remove('nav__day--active'));
+
     const day = e.target.closest('.nav__day');
+    if (!day) return;
     day.classList.add('nav__day--active');
     ResultView.clear();
     ResultView.renderResultList(
