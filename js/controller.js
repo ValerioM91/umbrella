@@ -12,7 +12,6 @@ const nav = document.querySelector('.nav');
 const searchInput = document.querySelector('.search-bar__input');
 const matchListEL = document.querySelector('.match-list');
 const overlay = document.querySelector('.overlay');
-const searchBtn = document.querySelector('.search-bar__btn');
 
 // SEARCHLIST - List of cities - AUTOCOMPLETE when input is more than 3 letters
 const controlMatchListOnType = async function (searchText) {
@@ -37,7 +36,6 @@ searchInput.addEventListener('input', () =>
   controlMatchListOnType(searchInput.value.trim())
 );
 
-// SEARCH LIST - EXACT MATCHES ON ICON CLICK
 const controlMatchList = async function (searchText) {
   SearchList.clear();
   Spinner.clear();
@@ -81,7 +79,7 @@ const controlGetForecast = async function (id) {
   ResultView.renderResultList(forecast.dailyThreeHoursArray[0]);
   // 7. ADD EVENT LISTNER TO NAV
   nav.addEventListener('click', function (e) {
-    nav.childNodes.forEach(day => day.classList.remove('nav__day--active'));
+    nav.childNodes.forEach(day => day.classList?.remove('nav__day--active'));
     const day = e.target.closest('.nav__day');
     day.classList.add('nav__day--active');
     ResultView.clear();
@@ -94,6 +92,7 @@ const controlGetForecast = async function (id) {
 
 // Picking the city from matchList
 matchListEL.addEventListener('click', async function (e) {
+  if (!e.target) return;
   const city = e.target.closest('.match-list__result');
   const id = city.dataset.id;
   await controlGetForecast(id);
